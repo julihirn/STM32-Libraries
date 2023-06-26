@@ -1,0 +1,121 @@
+porttimer.c
+xMBPortTimersInit               ->  InitaliseTimer
+vMBPortTimersEnable             ->  EnableTimer
+vMBPortTimersDisable            ->  DisableTimer
+
+portserial.c
+vMBPortSerialEnable             ->  CommunicationsInterrupts
+xMBPortSerialInit               ->  CommunicationsInitalise
+xMBPortSerialPutByte            ->  TransmitByte
+xMBPortSerialGetByte            ->  RecieveByte
+
+portevent.c
+xMBPortEventInit                ->  EventInitalise
+xMBPortEventPost                ->  EventPost
+xMBPortEventGet                 ->  EventRetrieve
+
+mbport.h
+eMBEventType                    ->  ModbusState
+eMBParity                       ->  ModbusParity
+
+mbproto.h
+eMBException                    ->  ModbusException
+
+mb.h
+eMBErrorCode                    ->  ModbusError
+eMBRegisterMode                 ->  ModbusOperation
+eMBInit                         ->  Initalise
+
+mbrtu.c
+eMBRTUInit                      ->  RTUInitalise
+eMBSndState                     ->  ModbusTXState
+eMBRcvState                     ->  ModbusRXState;
+eSndState                       ->  TXState
+eRcvState                       ->  RXState
+eMBRTUStart                     ->  RTUStart
+eMBRTUStop                      ->  RTUStop
+eMBRTUReceive                   ->  RTUReceive
+eMBRTUSend                      ->  RTUSend
+xMBRTUReceiveFSM                ->  RTUReceiveFSM
+xMBRTUTransmitFSM               ->  RTUTransmitFSM
+xMBRTUTimerT35Expired           ->  RTUTimerExpired
+
+
+xMBFunctionHandler              ->  FunctionHandler
+
+mbfunccoils.c
+eMBFuncReadCoils                ->  ReadCoils
+eMBFuncWriteCoil                ->  WriteCoil
+eMBFuncWriteMultipleCoils       -> WriteMultipleCoils
+
+mbfuncdisc.c
+eMBFuncReadDiscreteInputs       ->  ReadDiscreteInputs
+
+
+mbfuncholding.c
+eMBFuncWriteHoldingRegister     ->  WriteHoldingRegister
+eMBFuncWriteMultipleHoldingRegister ->  WriteMultipleHoldingRegister
+eMBFuncReadHoldingRegister      ->  eMBFuncReadHoldingRegister
+eMBFuncReadWriteMultipleHoldingRegister -> ReadWriteMultipleHoldingRegister
+
+mbfuncinput.c
+eMBFuncReadInputRegister        ->  ReadInputRegister
+
+nbfuncother.c
+eMBSetSlaveID                   ->  SetSlaveID
+eMBFuncReportSlaveID            ->  ReportSlaveID
+
+mbfuncutils.c
+xMBUtilSetBits                  ->  SetBits
+xMBUtilGetBits                  ->  GetBits
+prveMBError2Exception           ->  ErrorException
+
+mdtask.c
+eMBRegInputCB                   ->  RegInputCB
+eMBRegHoldingCB                 ->  RegHoldingCB
+eMBRegCoilsCB                   ->  RegCoilsCB
+eMBRegDiscreteCB                ->  RegDiscreteCB
+
+
+-----------------------------------------------------
+
+
+eMBMasterReqReadCoils           ->  MasterReqReadCoils
+
+vMBMasterGetRTUSndBuf           ->  MasterGetRTUTXBuffer
+vMBMasterGetPDUSndBuf           ->  MasterGetPDUTXBuffer
+vMBMasterSetPDUSndLength        ->  MasterSetPDUTXLength
+usMBMasterGetPDUSndLength       ->  MasterGetPDUTXLength
+vMBMasterSetCurTimerMode        ->  MasterSetTimeMode
+xMBMasterRequestIsBroadcast     ->  MasterRequestIsBroadcast
+
+ucMBMasterGetDestAddress        ->  MasterGetDestinationAddress
+vMBMasterSetDestAddress         ->  MasterSetDestinationAddress
+
+eMBMasterErrorEventType         ->  MasterErrorEvent
+
+eMBMasterGetErrorType           ->  MasterGetErrorType
+vMBMasterSetErrorType           ->  MasterSetErrorType
+
+vMBMasterSetCBRunInMasterMode   ->  RunInMasterMode
+xMBMasterGetCBRunInMasterMode   ->  IsMasterMode
+
+vMBMasterErrorCBRespondTimeout  ->  ErrorRespondTimeoutCB
+vMBMasterErrorCBReceiveData     ->  ErrorReceiveDataCB
+vMBMasterErrorCBExecuteFunction ->  ErrorExecuteFunctionCB
+vMBMasterCBRequestScuuess       ->  RequestSuccessCB
+
+pxMBFrameCBByteReceived         ->  EventFrameByteReceived
+pxMBFrameCBTransmitterEmpty     ->  EventTransmitterEmpty
+pxMBPortCBTimerExpired          ->  EventTimerExpired
+pxMBFrameCBReceiveFSMCur        ->  EventReceiveFSM
+pxMBFrameCBTransmitFSMCur       ->  EventTransmitFSM
+
+eMBRTUStart                     ->  EventRTUStart
+eMBRTUStop                      ->  EventRTUStop
+eMBRTUReceive                   ->  EventRTUReceive
+eMBRTUSend                      ->  EventRTUSend
+
+
+eMBMasterTimerMode              ->  MasterSetTimerMode
+xMBMasterRunResTake             ->
